@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shubham Kumar Karna · Full-stack developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF0FA;--ink:#15173D;--mute:#4D5282;--card:#fff;--line:#CDD1EC;--acc:#3B4BFF;--onacc:#fff;--hi:#FFE45C;--code:#15173D;--codeink:#E8EAFF;
+--d:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;--b:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1030;--ink:#EDEEFF;--mute:#A6ABDA;--card:#181A48;--line:#2E3170;--acc:#9AA4FF;--onacc:#0F1030;--code:#050620;--codeink:#E8EAFF}}
+:root[data-theme="dark"]{--bg:#0F1030;--ink:#EDEEFF;--mute:#A6ABDA;--card:#181A48;--line:#2E3170;--acc:#9AA4FF;--onacc:#0F1030;--code:#050620;--codeink:#E8EAFF}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--b);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font:800 1.25rem var(--d);text-decoration:none;letter-spacing:-.02em}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--mute)}
+nav a:hover{color:var(--ink)}
+#theme{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;font:500 .85rem var(--b);cursor:pointer}
+@media(max-width:640px){nav a{display:none}}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:72px 0 88px}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding:44px 0 56px}}
+h1{font:800 clamp(3rem,9vw,6.4rem)/.92 var(--d);letter-spacing:-.045em;margin:0 0 24px}
+h1 span{display:block}
+h1 .l2{color:var(--acc)}
+.lead{font-size:1.2rem;max-width:34ch;color:var(--mute);margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:999px;border:2px solid var(--ink)}
+.btn.p{background:var(--acc);border-color:var(--acc);color:var(--onacc)}
+.btn:hover{background:var(--hi);border-color:var(--hi);color:#15173D}
+pre.code{margin:0;background:var(--code);color:var(--codeink);border-radius:18px;padding:26px 26px 30px;font:500 .92rem/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-x:auto;box-shadow:10px 10px 0 var(--hi)}
+.code .ln{display:block;opacity:0;animation:in .01s forwards;white-space:pre}
+.code .k{color:var(--hi)}.code .s{color:#9FE8C4}.code .m{color:#8F95C9}
+@keyframes in{to{opacity:1}}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.9rem,4vw,2.8rem)/1.05 var(--d);letter-spacing:-.03em;margin:0 0 36px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px}
+.card h3{font:800 1.45rem/1.2 var(--d);letter-spacing:-.02em;margin:0 0 4px}
+.meta{color:var(--mute);font-size:.95rem;margin:0 0 16px}
+.card ul{margin:0;padding-left:1.2em}.card li{margin:0 0 8px;max-width:62ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tag{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.88rem;font-weight:500}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filters button{font:500 .95rem var(--b);padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;min-height:120px;align-content:flex-start}
+.chip{font:600 1.05rem var(--d);padding:10px 20px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.chip[hidden]{display:none}
+.tl{list-style:none;margin:0;padding:0 0 0 28px;border-left:3px solid var(--acc)}
+.tl li{position:relative;margin:0 0 30px}
+.tl li::before{content:"";position:absolute;left:-37px;top:7px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--acc)}
+.tl li.now::before{background:var(--hi)}
+.tl h3{font:800 1.2rem var(--d);margin:0}.tl p{margin:2px 0 0;color:var(--mute)}
+.contact{text-align:left}
+.contact a.big{font:800 clamp(1.5rem,5vw,3.2rem)/1.1 var(--d);letter-spacing:-.03em;text-decoration-thickness:4px;text-decoration-color:var(--hi);text-underline-offset:6px;word-break:break-word}
+.links{display:flex;gap:24px;margin-top:28px;flex-wrap:wrap;font-weight:600}
+footer{padding:32px 0;color:var(--mute);font-size:.9rem;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.code .ln{animation:none;opacity:1}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#top">SKK</a>
+<nav aria-label="Primary"><a href="#work">Work</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a><button id="theme" type="button" aria-label="Toggle colour theme">Theme</button></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap">
+<div class="hero">
+<div>
+<h1><span>Shubham</span><span class="l2">Kumar</span><span>Karna</span></h1>
+<p class="lead">Full-stack developer and B.Tech CSE student. I build APIs and web apps with FastAPI, Flask, React and PostgreSQL.</p>
+<div class="btns"><a class="btn p" href="#work">See my work</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+<pre class="code" aria-label="Profile summary shown as an API response"><span class="ln" style="animation-delay:.3s"><span class="m">GET</span> /shubham</span><span class="ln" style="animation-delay:.9s"><span class="s">200 OK</span></span><span class="ln" style="animation-delay:1.5s">{</span><span class="ln" style="animation-delay:1.8s">  <span class="k">"role"</span>: <span class="s">"Full-stack developer"</span>,</span><span class="ln" style="animation-delay:2.1s">  <span class="k">"studying"</span>: <span class="s">"B.Tech CSE, 2027"</span>,</span><span class="ln" style="animation-delay:2.4s">  <span class="k">"backend"</span>: [<span class="s">"FastAPI"</span>, <span class="s">"Flask"</span>],</span><span class="ln" style="animation-delay:2.7s">  <span class="k">"frontend"</span>: [<span class="s">"React"</span>],</span><span class="ln" style="animation-delay:3s">  <span class="k">"database"</span>: <span class="s">"PostgreSQL"</span>,</span><span class="ln" style="animation-delay:3.3s">  <span class="k">"location"</span>: <span class="s">"Faridabad, Haryana"</span></span><span class="ln" style="animation-delay:3.6s">}</span></pre>
+</div>
+</div>
+
+<section id="work"><div class="wrap">
+<h2>Work</h2>
+<div class="two">
+<article class="card">
+<h3>Software &amp; Web Developer</h3>
+<p class="meta">P2P Analysis &amp; Solutions, Chandigarh · June 2025</p>
+<ul>
+<li>Built a REST API with FastAPI and PostgreSQL to store data from learning management systems.</li>
+<li>Built a full-stack app with Flask, React, PostgreSQL and Docker to analyse GitHub data.</li>
+<li>Explored ways to visualise GitHub collaboration in a classroom.</li>
+</ul>
+<div class="tags"><span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">React</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
+</article>
+<article class="card">
+<h3>Gitlytics</h3>
+<p class="meta">Project · Python, Flask, React, PostgreSQL, Docker</p>
+<ul>
+<li>Full-stack web app: a Flask REST API with a React frontend.</li>
+<li>GitHub OAuth to read data from a user's repositories.</li>
+<li>Visualises collaboration across a repository.</li>
+<li>Celery and Redis handle background tasks.</li>
+</ul>
+<div class="tags"><span class="tag">OAuth</span><span class="tag">Celery</span><span class="tag">Redis</span></div>
+</article>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills</h2>
+<div class="filters" role="group" aria-label="Filter skills">
+<button type="button" data-f="all" aria-pressed="true">All</button>
+<button type="button" data-f="lang" aria-pressed="false">Languages</button>
+<button type="button" data-f="fw" aria-pressed="false">Frameworks</button>
+<button type="button" data-f="tool" aria-pressed="false">Tools</button>
+<button type="button" data-f="lib" aria-pressed="false">Libraries</button>
+</div>
+<div class="chips" id="chips"></div>
+</div></section>
+
+<section id="education"><div class="wrap">
+<h2>Education</h2>
+<ol class="tl">
+<li><h3>Class X, CBSE</h3><p>Tarun Niketan Public School, Faridabad · Apr 2019 – Mar 2021</p></li>
+<li><h3>Class XII, CBSE</h3><p>Tarun Niketan Public School, Faridabad · Apr 2022 – Mar 2023</p></li>
+<li class="now"><h3>B.Tech, Computer Science &amp; Engineering</h3><p>Satyug Darshan Institute of Engineering and Technology, Faridabad · Aug 2023 – Jun 2027 (in progress)</p></li>
+</ol>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+<h2>Contact</h2>
+<a class="big" href="mailto:gpkarna72@gmail.com">gpkarna72@gmail.com</a>
+<div class="links"><a href="https://github.com/shubhamkrkarna">GitHub</a><a href="https://www.linkedin.com/in/shubham-kumar-karna-182a432b6/">LinkedIn</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 Shubham Kumar Karna</div></footer>
+
+<script>
+(function(){
+var S=[["Java","lang"],["Python","lang"],["C/C++","lang"],["SQL (Postgres)","lang"],["JavaScript","lang"],["HTML/CSS","lang"],["R","lang"],
+["React","fw"],["Node.js","fw"],["Flask","fw"],["FastAPI","fw"],["JUnit","fw"],["WordPress","fw"],["Material-UI","fw"],
+["Git","tool"],["Docker","tool"],["Google Cloud Platform","tool"],["VS Code","tool"],["PyCharm","tool"],["IntelliJ","tool"],["Eclipse","tool"],
+["pandas","lib"],["NumPy","lib"],["Matplotlib","lib"]];
+var box=document.getElementById('chips');
+S.forEach(function(s){var e=document.createElement('span');e.className='chip';e.textContent=s[0];e.dataset.c=s[1];box.appendChild(e)});
+var btns=document.querySelectorAll('.filters button');
+btns.forEach(function(b){b.addEventListener('click',function(){
+btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+box.querySelectorAll('.chip').forEach(function(c){c.hidden=!(b.dataset.f==='all'||c.dataset.c===b.dataset.f)});
+})});
+var t=document.getElementById('theme'),r=document.documentElement;
+t.addEventListener('click',function(){
+var dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+r.dataset.theme=dark?'light':'dark';
+});
+})();
+</script>
+</body>
+</html>
